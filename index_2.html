@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Comptoir Suisse</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.svg" alt="Le Comptoir Suisse">
+        </div>
+        <div class="nav-left">
+            <a href="#team" class="nav-link">Équipe</a>
+            <div class="nav-dropdown">
+                <a href="#carte" class="nav-link">Carte</a>
+                <div class="dropdown-menu">
+                    <a href="#theatre-menu" class="dropdown-link">Theatre Menu</a>
+                    <a href="#after-theatre-menu" class="dropdown-link">After Theatre Menu</a>
+                    <a href="#normal-menu" class="dropdown-link">Normal Menu</a>
+                </div>
+            </div>
+            <a href="#opening-hours" class="nav-link">Horaires</a>
+            <a href="#booking" class="nav-link">Réservation</a>
+            <a href="#press" class="nav-link">Press</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-items">
+            <a href="#home" class="mobile-menu-link">Home</a>
+            <a href="#team" class="mobile-menu-link">Team</a>
+            <div class="mobile-submenu-toggle mobile-menu-link">
+                Menus
+                <div class="mobile-submenu">
+                    <a href="#theatre-menu" class="mobile-submenu-link">Theatre Menu</a>
+                    <a href="#after-theatre-menu" class="mobile-submenu-link">After Theatre Menu</a>
+                    <a href="#normal-menu" class="mobile-submenu-link">Normal Menu</a>
+                </div>
+            </div>
+            <a href="#opening-hours" class="mobile-menu-link">Opening hours</a>
+            <a href="#booking" class="mobile-menu-link">Booking</a>
+            <a href="#press" class="mobile-menu-link">Press</a>
+            <a href="#contact" class="mobile-menu-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="img/beeldwebsite.png" alt="Le Comptoir Suisse" class="hero-background">
+        <!-- <video autoplay muted loop playsinline class="hero-background">
+            <source src="img/video.webm" type="video/webm">
+        </video>-->
+        <div class="hero-content">
+            <div class="hero-left">
+                <img src="img/logo.svg" alt="Le Comptoir Suisse Logo" class="hero-logo">
+            </div>
+            <div class="hero-center">
+            </div>
+            <div class="hero-right">
+                <a href="#booking" class="reserve-button">RÉSERVER</a>
+            </div>
+        </div>
+        <div class="hero-tagline">
+            <h2>LIEU VIVANT ET GOURMAND</h2>
+            <h3>LOCAL • SINCÈRE • DE SAISON • SANS CHICHIS</h3>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="chef-section">
+        <div class="chef-content">
+            <div class="chef-text">
+                <h2>PHILOSOPHIE CENTRALE</h2>
+                <h3>« Le Terroir Vivant »</h3>
+                <div class="chef-description">
+                    <p><strong>Basé sur des produits locaux et saisonniers</strong> — interprété avec créativité et finesse, loin des clichés rustiques.</p>
+                    <p><strong>Savoir-faire culinaire de Benjamin et son équipe</strong> : une cuisine authentique qui révèle l'essence de chaque ingrédient du terroir suisse.</p>
+                    <p><strong>Format du menu :</strong> Court, rotatif, guidé par le marché. « Le plat du Comptoir » change chaque semaine, reflétant la saisonnalité et les trouvailles du marché.</p>
+                    <p><strong>Lieu de vie entre 11h00 et 00h00</strong> — Un espace convivial où tradition et modernité se rencontrent dans l'esprit brasserie moderne, chaleureux et épuré.</p>
+                </div>
+                <div class="carte-button">
+                    <button onclick="window.open('menu.pdf', '_blank')">DÉCOUVRIR LA CARTE</button>
+                </div>
+            </div>
+            <div class="chef-dishes">
+                <img src="img/img2.avif" alt="Produits du terroir suisse" class="dishes-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Auto-Scrolling Gallery Section -->
+    <section class="scrolling-gallery">
+        <div class="scrolling-gallery-track">
+            <div class="scrolling-gallery-item" data-image="img/img1.avif">
+                <img src="img/img1.avif" alt="Gallery 1">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img2.avif">
+                <img src="img/img2.avif" alt="Gallery 2">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img3.avif">
+                <img src="img/img3.avif" alt="Gallery 3">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img5.jpeg">
+                <img src="img/img5.jpeg" alt="Gallery 5">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img6.jpeg">
+                <img src="img/img6.jpeg" alt="Gallery 6">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img7.jpeg">
+                <img src="img/img7.jpeg" alt="Gallery 7">
+            </div>
+            <!-- Duplicate images for seamless loop -->
+            <div class="scrolling-gallery-item" data-image="img/img1.avif">
+                <img src="img/img1.avif" alt="Gallery 1">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img2.avif">
+                <img src="img/img2.avif" alt="Gallery 2">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img3.avif">
+                <img src="img/img3.avif" alt="Gallery 3">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img5.jpeg">
+                <img src="img/img5.jpeg" alt="Gallery 5">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img6.jpeg">
+                <img src="img/img6.jpeg" alt="Gallery 6">
+            </div>
+            <div class="scrolling-gallery-item" data-image="img/img7.jpeg">
+                <img src="img/img7.jpeg" alt="Gallery 7">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <img src="" alt="Full size image" id="lightbox-image">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ADRESSE</h4>
+                <p>Centre de Beaulieu,<br>
+                1004 Lausanne</p>
+                <a href="https://maps.google.com" target="_blank" class="google-maps" id="maps">Google Maps</a>
+                <p class="phone"><u>TÉL : 021 624 84 84</u></p>
+            </div>
+            <div class="footer-section" id="team">
+                <h4>ÉQUIPE</h4>
+                <p>Notre équipe passionnée vous accueille<br>
+                pour une expérience gastronomique unique.</p>
+            </div>
+            <div class="footer-section" id="opening-hours">
+                <h4>HORAIRES</h4>
+                <p><strong>Lieu de vie</strong></p>
+                <p>Tous les jours<br>
+                11H00 - 00H00</p>
+                <p>Service continu</p>
+            </div>
+            <div class="footer-section" id="booking">
+                <h4>RÉSERVATION</h4>
+                <p>Réservez votre table<br>
+                par téléphone ou en ligne</p>
+                <p><em>Plateforme de réservation à venir</em></p>
+            </div>
+            <div class="footer-section" id="press">
+                <h4>PRESSE</h4>
+                <p>Pour toute demande presse,<br>
+                contactez-nous</p>
+                <p><em>Documents à venir</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
