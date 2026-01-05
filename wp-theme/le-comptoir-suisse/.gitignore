@@ -1,0 +1,46 @@
+# WordPress Theme - Le Comptoir Suisse
+# .gitignore
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor files
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# Node modules (if you add build tools later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Compiled/minified files (keep source files only)
+# Uncomment if you add a build process:
+# *.min.css
+# *.min.js
+
+# Custom files to ignore
+# Add any files you don't want to version control

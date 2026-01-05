@@ -1,0 +1,18 @@
+# Le Comptoir Suisse WordPress Theme
+
+## Recommended Screenshot
+
+Create a screenshot.png file (1200x900px) showing your homepage for the WordPress theme selector.
+
+To create:
+1. Open your website in a browser
+2. Take a full-page screenshot
+3. Crop to 1200px wide x 900px tall
+4. Save as `screenshot.png` in the theme root folder
+5. Ensure it shows:
+   - Your logo
+   - Hero background
+   - Navigation
+   - Part of philosophy section
+
+This will appear in Appearance → Themes in WordPress admin.

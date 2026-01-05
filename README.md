@@ -131,3 +131,8 @@ The website now properly reflects:
 - Logo integration
 - Modern, clean aesthetic
 - Swiss heritage meets contemporary design
+
+
+@$#4#3FmWi4w
+
+- tradurre il menu hamburger in francese :e.g. home -> accueil

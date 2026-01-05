@@ -1,0 +1,18 @@
+/*
+Theme Name: Le Comptoir Suisse
+Theme URI: https://lecomptoirsuisse.ch
+Author: Francesco Carratta
+Author URI: https://github.com/CarrattaFrancesco
+Description: Custom WordPress theme for Le Comptoir Suisse restaurant - A modern, elegant single-page theme featuring auto-scrolling gallery, parallax effects, and fully customizable content through WordPress Customizer and admin settings.
+Version: 1.0.0
+Requires at least: 5.8
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: le-comptoir-suisse
+Tags: restaurant, one-page, custom-header, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/* This stylesheet is for theme identification only */
+/* Main styles are loaded from assets/css/main.css */
