@@ -321,6 +321,84 @@ function comptoir_customize_register($wp_customize) {
         'section'     => 'comptoir_footer_content',
         'type'        => 'text',
     ));
+    
+    // ========================================
+    // NOTIFICATION POPUP
+    // ========================================
+    $wp_customize->add_section('comptoir_notification_popup', array(
+        'title'       => __('Notification Popup', 'le-comptoir-suisse'),
+        'description' => __('Display an important message to visitors. Once dismissed, it will not show again for 7 days unless the message is changed.', 'le-comptoir-suisse'),
+        'priority'    => 34,
+    ));
+    
+    $wp_customize->add_setting('popup_enabled', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+    ));
+    
+    $wp_customize->add_control('popup_enabled', array(
+        'label'       => __('Enable Popup', 'le-comptoir-suisse'),
+        'description' => __('Show the notification popup to visitors', 'le-comptoir-suisse'),
+        'section'     => 'comptoir_notification_popup',
+        'type'        => 'checkbox',
+    ));
+    
+    $wp_customize->add_setting('popup_title', array(
+        'default'           => __('Important Notice', 'le-comptoir-suisse'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('popup_title', array(
+        'label'       => __('Popup Title', 'le-comptoir-suisse'),
+        'section'     => 'comptoir_notification_popup',
+        'type'        => 'text',
+    ));
+    
+    $wp_customize->add_setting('popup_message', array(
+        'default'           => '',
+        'sanitize_callback' => 'wp_kses_post',
+    ));
+    
+    $wp_customize->add_control('popup_message', array(
+        'label'       => __('Popup Message', 'le-comptoir-suisse'),
+        'description' => __('HTML tags allowed: &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;br&gt;, &lt;a&gt;', 'le-comptoir-suisse'),
+        'section'     => 'comptoir_notification_popup',
+        'type'        => 'textarea',
+    ));
+    
+    $wp_customize->add_setting('popup_button_text', array(
+        'default'           => __('Got it!', 'le-comptoir-suisse'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('popup_button_text', array(
+        'label'       => __('Close Button Text', 'le-comptoir-suisse'),
+        'section'     => 'comptoir_notification_popup',
+        'type'        => 'text',
+    ));
+    
+    $wp_customize->add_setting('popup_link_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    
+    $wp_customize->add_control('popup_link_url', array(
+        'label'       => __('Optional Link URL', 'le-comptoir-suisse'),
+        'description' => __('Leave empty to hide the link button', 'le-comptoir-suisse'),
+        'section'     => 'comptoir_notification_popup',
+        'type'        => 'url',
+    ));
+    
+    $wp_customize->add_setting('popup_link_text', array(
+        'default'           => __('Learn More', 'le-comptoir-suisse'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('popup_link_text', array(
+        'label'       => __('Link Button Text', 'le-comptoir-suisse'),
+        'section'     => 'comptoir_notification_popup',
+        'type'        => 'text',
+    ));
 }
 add_action('customize_register', 'comptoir_customize_register');
 

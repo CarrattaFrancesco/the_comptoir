@@ -17,6 +17,34 @@ if (!defined('ABSPATH')) {
     <img src="" alt="<?php esc_attr_e('Full size image', 'le-comptoir-suisse'); ?>" id="lightbox-image">
 </div>
 
+<!-- Notification Popup -->
+<?php if (get_theme_mod('popup_enabled', false)) : ?>
+<div class="notification-popup-overlay" id="notification-popup">
+    <div class="notification-popup">
+        <button class="notification-popup-close" aria-label="<?php esc_attr_e('Close', 'le-comptoir-suisse'); ?>">&times;</button>
+        <div class="notification-popup-content">
+            <h3 class="notification-popup-title"><?php echo esc_html(get_theme_mod('popup_title', __('Important Notice', 'le-comptoir-suisse'))); ?></h3>
+            <div class="notification-popup-message">
+                <?php echo wp_kses_post(get_theme_mod('popup_message', '')); ?>
+            </div>
+            <div class="notification-popup-actions">
+                <?php 
+                $popup_link_url = get_theme_mod('popup_link_url', '');
+                if ($popup_link_url) : 
+                ?>
+                    <a href="<?php echo esc_url($popup_link_url); ?>" class="notification-popup-link" target="_blank">
+                        <?php echo esc_html(get_theme_mod('popup_link_text', __('Learn More', 'le-comptoir-suisse'))); ?>
+                    </a>
+                <?php endif; ?>
+                <button class="notification-popup-button">
+                    <?php echo esc_html(get_theme_mod('popup_button_text', __('Got it!', 'le-comptoir-suisse'))); ?>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
 <!-- Footer -->
 <footer class="footer" id="contact">
     <div class="footer-content">

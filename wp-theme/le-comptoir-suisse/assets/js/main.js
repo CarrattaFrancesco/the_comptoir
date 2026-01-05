@@ -219,4 +219,87 @@ window.addEventListener('load', function() {
             element.style.transform = 'translateY(0)';
         }, index * 200 + 300);
     });
+    
+    // ========================================
+    // NOTIFICATION POPUP FUNCTIONALITY
+    // ========================================
+    
+    // Check if popup is enabled and data is available
+    if (typeof comptoirData !== 'undefined' && comptoirData.popup && comptoirData.popup.enabled) {
+        const popupData = comptoirData.popup;
+        const popupOverlay = document.getElementById('notification-popup');
+        
+        if (popupOverlay) {
+            // Check localStorage for dismissed popup
+            const storageKey = 'comptoir_popup_dismissed';
+            const dismissedData = localStorage.getItem(storageKey);
+            
+            let shouldShowPopup = true;
+            
+            if (dismissedData) {
+                try {
+                    const parsed = JSON.parse(dismissedData);
+                    const currentTime = new Date().getTime();
+                    const weekInMs = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+                    
+                    // Check if content hash matches and if less than a week has passed
+                    if (parsed.hash === popupData.hash && 
+                        (currentTime - parsed.timestamp) < weekInMs) {
+                        shouldShowPopup = false;
+                    }
+                } catch (e) {
+                    // If parsing fails, clear the storage and show popup
+                    localStorage.removeItem(storageKey);
+                }
+            }
+            
+            // Show popup if conditions are met
+            if (shouldShowPopup) {
+                // Small delay before showing to avoid jarring experience
+                setTimeout(() => {
+                    popupOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 800);
+            }
+            
+            // Function to close and save popup state
+            function closePopup() {
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // Save dismissal to localStorage with content hash
+                const dismissData = {
+                    timestamp: new Date().getTime(),
+                    hash: popupData.hash
+                };
+                localStorage.setItem(storageKey, JSON.stringify(dismissData));
+            }
+            
+            // Close button handler
+            const closeButton = popupOverlay.querySelector('.notification-popup-close');
+            if (closeButton) {
+                closeButton.addEventListener('click', closePopup);
+            }
+            
+            // Action button handler
+            const actionButton = popupOverlay.querySelector('.notification-popup-button');
+            if (actionButton) {
+                actionButton.addEventListener('click', closePopup);
+            }
+            
+            // Close on overlay click (outside popup)
+            popupOverlay.addEventListener('click', function(e) {
+                if (e.target === popupOverlay) {
+                    closePopup();
+                }
+            });
+            
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+        }
+    }
 });

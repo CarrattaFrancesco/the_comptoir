@@ -171,10 +171,21 @@ function comptoir_enqueue_assets() {
         true
     );
     
-    // Pass WordPress data to JavaScript
+    // Pass WordPress data to JavaScript including popup data
+    $popup_data = array(
+        'enabled' => get_theme_mod('popup_enabled', false),
+        'title' => get_theme_mod('popup_title', __('Important Notice', 'le-comptoir-suisse')),
+        'message' => get_theme_mod('popup_message', ''),
+        'buttonText' => get_theme_mod('popup_button_text', __('Got it!', 'le-comptoir-suisse')),
+        'linkUrl' => get_theme_mod('popup_link_url', ''),
+        'linkText' => get_theme_mod('popup_link_text', __('Learn More', 'le-comptoir-suisse')),
+        'hash' => md5(get_theme_mod('popup_message', '') . get_theme_mod('popup_title', '')),
+    );
+    
     wp_localize_script('comptoir-main-script', 'comptoirData', array(
         'ajaxUrl' => admin_url('admin-ajax.php'),
-        'siteUrl' => home_url('/')
+        'siteUrl' => home_url('/'),
+        'popup' => $popup_data,
     ));
 }
 add_action('wp_enqueue_scripts', 'comptoir_enqueue_assets');

@@ -202,9 +202,7 @@ If changes don't appear:
 ## 📞 Need Help?
 
 If you can't find something or need assistance:
-1. Check the full README.md file in theme folder
-2. Refer to SETUP-INSTRUCTIONS.md for technical details
-3. Contact your theme developer
+1. Contact your theme developer
 
 ---
 

@@ -573,6 +573,12 @@ section {
     font-size: 14px;
     font-weight: 300;
     margin-top: 20px;
+    color: inherit;
+}
+
+.phone u {
+    color: inherit;
+    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -830,4 +836,194 @@ html {
 .lightbox-close:hover {
     transform: rotate(90deg);
     color: var(--quaternary-color);
+}
+
+/* ========================================
+   NOTIFICATION POPUP
+   ======================================== */
+
+.notification-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.notification-popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.notification-popup {
+    background: var(--secondary-color);
+    color: var(--tertiary-color);
+    max-width: 600px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.notification-popup-overlay.active .notification-popup {
+    transform: translateY(0);
+}
+
+.notification-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 32px;
+    color: var(--tertiary-color);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+    font-weight: 300;
+    line-height: 1;
+    padding: 5px 10px;
+    z-index: 10;
+}
+
+.notification-popup-close:hover {
+    transform: rotate(90deg);
+    color: var(--primary-color);
+}
+
+.notification-popup-content {
+    padding: 40px 30px 30px;
+}
+
+.notification-popup-title {
+    font-family: 'FF Sizmo Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.notification-popup-message {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: var(--tertiary-color);
+}
+
+.notification-popup-message p {
+    margin-bottom: 15px;
+}
+
+.notification-popup-message p:last-child {
+    margin-bottom: 0;
+}
+
+.notification-popup-message strong {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.notification-popup-message a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.notification-popup-message a:hover {
+    color: var(--tertiary-color);
+}
+
+.notification-popup-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.notification-popup-button,
+.notification-popup-link {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-family: 'FF Sizmo Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.notification-popup-button {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.notification-popup-button:hover {
+    background: var(--tertiary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(77, 21, 38, 0.3);
+}
+
+.notification-popup-link {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.notification-popup-link:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .notification-popup {
+        max-width: 90%;
+        margin: 20px;
+    }
+    
+    .notification-popup-content {
+        padding: 35px 20px 25px;
+    }
+    
+    .notification-popup-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .notification-popup-message {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .notification-popup-actions {
+        flex-direction: column;
+    }
+    
+    .notification-popup-button,
+    .notification-popup-link {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .notification-popup-close {
+        font-size: 28px;
+        top: 10px;
+        right: 10px;
+    }
 }
