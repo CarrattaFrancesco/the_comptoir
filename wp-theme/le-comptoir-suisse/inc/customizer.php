@@ -181,6 +181,26 @@ function comptoir_customize_register($wp_customize) {
     )));
     
     // ========================================
+    // SOCIAL MEDIA PANEL
+    // ========================================
+    $wp_customize->add_section('comptoir_social_media', array(
+        'title'    => __('Social Media Links', 'le-comptoir-suisse'),
+        'priority' => 31,
+    ));
+    
+    $wp_customize->add_setting('instagram_link', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    
+    $wp_customize->add_control('instagram_link', array(
+        'label'       => __('Instagram URL', 'le-comptoir-suisse'),
+        'description' => __('Enter your Instagram profile URL (e.g., https://instagram.com/yourprofile)', 'le-comptoir-suisse'),
+        'section'     => 'comptoir_social_media',
+        'type'        => 'url',
+    ));
+    
+    // ========================================
     // CONTACT INFORMATION PANEL
     // ========================================
     $wp_customize->add_panel('comptoir_contact_panel', array(
@@ -345,13 +365,14 @@ function comptoir_customize_register($wp_customize) {
     
     $wp_customize->add_setting('popup_title', array(
         'default'           => __('Important Notice', 'le-comptoir-suisse'),
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'wp_kses_post',
     ));
     
     $wp_customize->add_control('popup_title', array(
         'label'       => __('Popup Title', 'le-comptoir-suisse'),
+        'description' => __('HTML tags allowed: &lt;br&gt;, &lt;strong&gt;, &lt;em&gt;', 'le-comptoir-suisse'),
         'section'     => 'comptoir_notification_popup',
-        'type'        => 'text',
+        'type'        => 'textarea',
     ));
     
     $wp_customize->add_setting('popup_message', array(
@@ -373,6 +394,7 @@ function comptoir_customize_register($wp_customize) {
     
     $wp_customize->add_control('popup_button_text', array(
         'label'       => __('Close Button Text', 'le-comptoir-suisse'),
+        'description' => __('Leave empty to hide the close button', 'le-comptoir-suisse'),
         'section'     => 'comptoir_notification_popup',
         'type'        => 'text',
     ));

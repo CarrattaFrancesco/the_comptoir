@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
     <div class="notification-popup">
         <button class="notification-popup-close" aria-label="<?php esc_attr_e('Close', 'le-comptoir-suisse'); ?>">&times;</button>
         <div class="notification-popup-content">
-            <h3 class="notification-popup-title"><?php echo esc_html(get_theme_mod('popup_title', __('Important Notice', 'le-comptoir-suisse'))); ?></h3>
+            <h3 class="notification-popup-title"><?php echo wp_kses_post(get_theme_mod('popup_title', __('Important Notice', 'le-comptoir-suisse'))); ?></h3>
             <div class="notification-popup-message">
                 <?php echo wp_kses_post(get_theme_mod('popup_message', '')); ?>
             </div>
@@ -36,9 +36,14 @@ if (!defined('ABSPATH')) {
                         <?php echo esc_html(get_theme_mod('popup_link_text', __('Learn More', 'le-comptoir-suisse'))); ?>
                     </a>
                 <?php endif; ?>
-                <button class="notification-popup-button">
-                    <?php echo esc_html(get_theme_mod('popup_button_text', __('Got it!', 'le-comptoir-suisse'))); ?>
-                </button>
+                <?php 
+                $popup_button_text = get_theme_mod('popup_button_text', __('Got it!', 'le-comptoir-suisse'));
+                if ($popup_button_text) : 
+                ?>
+                    <button class="notification-popup-button">
+                        <?php echo esc_html($popup_button_text); ?>
+                    </button>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -57,19 +62,11 @@ if (!defined('ABSPATH')) {
             ?>
                 <a href="<?php echo esc_url($maps_url); ?>" target="_blank" class="google-maps" id="maps"><?php esc_html_e('Google Maps', 'le-comptoir-suisse'); ?></a>
             <?php endif; ?>
-            <p class="phone"><u><?php echo esc_html__('TÉL : ', 'le-comptoir-suisse') . esc_html(get_theme_mod('contact_phone', '021 624 84 84')); ?></u></p>
-        </div>
-        
-        <div class="footer-section" id="team">
-            <h4><?php esc_html_e('ÉQUIPE', 'le-comptoir-suisse'); ?></h4>
-            <p><?php echo wp_kses_post(get_theme_mod('team_description', 'Notre équipe passionnée vous accueille<br>pour une expérience gastronomique unique.')); ?></p>
         </div>
         
         <div class="footer-section" id="opening-hours">
             <h4><?php esc_html_e('HORAIRES', 'le-comptoir-suisse'); ?></h4>
-            <p><strong><?php esc_html_e('Lieu de vie', 'le-comptoir-suisse'); ?></strong></p>
             <p><?php echo wp_kses_post(get_theme_mod('opening_hours', 'Tous les jours<br>11H00 - 00H00')); ?></p>
-            <p><?php esc_html_e('Service continu', 'le-comptoir-suisse'); ?></p>
         </div>
         
         <div class="footer-section" id="booking">
@@ -80,17 +77,6 @@ if (!defined('ABSPATH')) {
             if ($booking_status) :
             ?>
                 <p><em><?php echo esc_html($booking_status); ?></em></p>
-            <?php endif; ?>
-        </div>
-        
-        <div class="footer-section" id="press">
-            <h4><?php esc_html_e('PRESSE', 'le-comptoir-suisse'); ?></h4>
-            <p><?php echo wp_kses_post(get_theme_mod('press_text', 'Pour toute demande presse,<br>contactez-nous')); ?></p>
-            <?php
-            $press_status = get_theme_mod('press_status', 'Documents à venir');
-            if ($press_status) :
-            ?>
-                <p><em><?php echo esc_html($press_status); ?></em></p>
             <?php endif; ?>
         </div>
     </div>

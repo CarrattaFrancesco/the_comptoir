@@ -22,6 +22,12 @@ Your website content can be edited in **two places**:
   - Subtitle: "LOCAL • SINCÈRE • DE SAISON • SANS CHICHIS"
 - **Hero Section → Reserve Button** - Change button text and link
 
+#### Social Media Links
+- **Social Media Links → Instagram URL** - Your Instagram profile link
+  - Icon appears on the right side of navigation
+  - Visible on both desktop and mobile
+  - Leave empty to hide icon
+
 #### Philosophy Section (Middle)
 - **Philosophy Section → Content**
   - Title: "PHILOSOPHIE CENTRALE"
@@ -39,9 +45,21 @@ Your website content can be edited in **two places**:
 
 #### Footer Sections
 - **Footer Content**
-  - Team description
   - Booking information
-  - Press contact text
+
+#### Notification Popup
+- **Notification Popup → Enable Popup** - Show/hide popup to visitors
+- **Notification Popup → Popup Title** - Main title (HTML allowed: `<br>`, `<strong>`, `<em>`)
+- **Notification Popup → Popup Message** - Full message text (HTML allowed)
+- **Notification Popup → Close Button Text** - Button text (leave empty to hide button)
+- **Notification Popup → Optional Link URL** - External link (leave empty to hide link)
+- **Notification Popup → Link Button Text** - Link button label
+
+**Popup Features:**
+- Appears once per visitor (dismissal saved for 7 days)
+- Reappears if content changes
+- Scrollable on mobile devices
+- Can be closed via button, X icon, clicking outside, or pressing Escape
 
 ---
 
@@ -102,11 +120,13 @@ Your website content can be edited in **two places**:
 | **Hero background photo** | Customizer → Hero Section | Upload new image |
 | **Taglines** | Customizer → Hero Section → Taglines | Edit text fields |
 | **Logo** | Customizer → Site Identity | Upload logo |
+| **Instagram link** | Customizer → Social Media Links | Enter Instagram URL |
 | **Philosophy text** | Customizer → Philosophy Section | Edit description |
 | **Philosophy image** | Customizer → Philosophy Section | Upload new image |
 | **Address** | Customizer → Contact Information | Edit address field |
 | **Phone number** | Customizer → Contact Information | Edit phone field |
 | **Opening hours** | Customizer → Contact Information | Edit hours text |
+| **Notification popup** | Customizer → Notification Popup | Enable and configure |
 | **Gallery photos** | Comptoir Settings | Enter image IDs |
 | **Menu PDFs** | Comptoir Settings | Upload PDF files |
 
@@ -126,9 +146,14 @@ Some fields allow HTML tags:
 - `<em>` - Italic text
 - `<p>` - Paragraph
 
+**Fields with HTML support:**
+- Philosophy description
+- Popup title (supports `<br>`, `<strong>`, `<em>`)
+- Popup message (supports `<p>`, `<strong>`, `<em>`, `<br>`, `<a>`)
+
 Example:
 ```
-Centre de Beaulieu,<br>1004 Lausanne
+Welcome to<br>Le Comptoir Suisse
 ```
 
 ### Finding Image IDs
@@ -148,6 +173,12 @@ Centre de Beaulieu,<br>1004 Lausanne
 - Other menus only appear in dropdown
 - If you only have one menu, just upload "Normal Menu"
 - PDFs open in new browser tab
+
+### Navigation Menu
+- Mobile hamburger menu only shows if you have menu items
+- Go to **Appearance → Menus** to manage navigation
+- If menu is empty, hamburger icon is hidden on mobile
+- Instagram icon always visible if URL is set
 
 ---
 
@@ -192,10 +223,25 @@ If changes don't appear:
 - This requires editing CSS files
 - Contact your developer for color changes
 
+**Q: How do I add Instagram icon?**
+- Go to Customizer → Social Media Links
+- Enter your full Instagram URL (e.g., https://instagram.com/yourprofile)
+- Icon appears automatically on right side of navigation
+- Leave field empty to hide the icon
+
 **Q: Can I add more pages?**
 - Yes, but this theme is designed as single-page
 - Additional pages need custom templates
 - Contact your developer for multi-page setup
+
+**Q: How does the popup notification work?**
+- Enable it in Customizer → Notification Popup
+- Popup appears once to each visitor
+- Dismissed popups are remembered for 7 days
+- If you change the content, it will show again to all visitors
+- Visitors can close it via button, X, clicking outside, or pressing Escape
+- Scrollable on mobile if content is long
+- Both close button and link button are optional (leave text empty to hide)
 
 ---
 
@@ -206,5 +252,5 @@ If you can't find something or need assistance:
 
 ---
 
-**Last Updated**: December 2025  
+**Last Updated**: January 2026  
 **Theme Version**: 1.0.0
