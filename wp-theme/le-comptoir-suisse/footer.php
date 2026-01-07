@@ -78,6 +78,14 @@ if (!defined('ABSPATH')) {
             ?>
                 <p><em><?php echo esc_html($booking_status); ?></em></p>
             <?php endif; ?>
+            <?php
+            $reserve_enabled = get_theme_mod('reserve_button_enabled', true);
+            if ($reserve_enabled) :
+                $reserve_text = get_theme_mod('reserve_button_text', 'RÉSERVER');
+                $reserve_link = get_theme_mod('reserve_button_link', '#booking');
+            ?>
+                <a href="<?php echo esc_url($reserve_link); ?>" class="reserve-button"><?php echo esc_html($reserve_text); ?></a>
+            <?php endif; ?>
         </div>
     </div>
 </footer>

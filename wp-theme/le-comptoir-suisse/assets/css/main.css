@@ -603,6 +603,18 @@ section {
     opacity: 1;
 }
 
+/* Footer reserve button styling */
+.footer .reserve-button {
+    margin-top: 20px;
+    border-color: var(--quaternary-color);
+    color: var(--quaternary-color);
+}
+
+.footer .reserve-button:hover {
+    background: var(--quaternary-color);
+    color: var(--tertiary-color);
+}
+
 .phone {
     font-size: 14px;
     font-weight: 300;
